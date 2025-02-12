@@ -2,15 +2,16 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 
 const FooterDesignSection = () => {
   const customerLogos = [
-    '/logo(1).svg',
-    '/logo(2).svg',
-    '/logo(3).svg',
-    '/logo(4).svg',
+    '/logo1.svg',
+    '/logo2.svg',
+    '/logo3.svg',
+    '/logo4.svg',
     '/logo.svg',
-    '/logo(5).svg',
+    '/logo5.svg',
   ];
 
   return (

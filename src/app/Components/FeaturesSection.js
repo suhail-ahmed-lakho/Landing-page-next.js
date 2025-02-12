@@ -56,12 +56,12 @@ export default function FeaturesSection() {
             description: "Our membership management software provides full automation of membership renewals and payments"
           },
           {
-            icon: "/icon(1).svg",
+            icon: "/icon1.svg",
             title: "National Associations",
             description: "Our membership management software provides full automation of membership renewals and payments"
           },
           {
-            icon: "/icon(2).svg",
+            icon: "/icon2.svg",
             title: "Clubs And Groups",
             description: "Our membership management software provides full automation of membership renewals and payments"
           }

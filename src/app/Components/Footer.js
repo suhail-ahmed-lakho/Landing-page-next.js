@@ -32,32 +32,35 @@ const Footer = () => {
 
   return (
     <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         {/* Newsletter Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-green-50 dark:bg-gray-700 rounded-2xl p-8 mb-12"
+          className="bg-green-50 dark:bg-gray-700 rounded-2xl p-4 sm:p-8 mb-8 sm:mb-12"
         >
           <div className="max-w-xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Subscribe to our newsletter</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">Get the latest news and updates delivered straight to your inbox.</p>
-            <form className="flex gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">Subscribe to our newsletter</h3>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">Get the latest news and updates delivered straight to your inbox.</p>
+            <form className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="flex-1 px-4 py-2 sm:py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-green-500"
               />
-              <button className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
-                Subscribe
+              <button
+                type="submit"
+                className="bg-green-500 text-white px-6 py-2 sm:py-3 rounded-lg hover:bg-green-600 transition-colors whitespace-nowrap"
+              >
+                Subscribe Now
               </button>
             </form>
           </div>
         </motion.div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-8 sm:mb-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,14 +70,14 @@ const Footer = () => {
             <Image
               src={Logo}
               alt="Logo"
-              className="h-8 w-auto mb-6"
+              className="h-8 w-auto mb-4 sm:mb-6"
               priority
             />
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
               Making the world a better place through constructing elegant hierarchies.
               Join us in our mission to transform the digital landscape.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -100,19 +103,19 @@ const Footer = () => {
 
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([title, links], index) => (
-            <motion.div 
+            <motion.div
               key={title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">{title}</h3>
-              <ul className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">{title}</h3>
+              <ul className="space-y-2 sm:space-y-3">
                 {links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors inline-flex items-center group"
+                      className="text-sm sm:text-base text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors inline-flex items-center group"
                     >
                       <span className="group-hover:translate-x-1 transition-transform">
                         {link}
@@ -130,20 +133,20 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="border-t border-gray-200 dark:border-gray-700 pt-8"
+          className="border-t border-gray-200 dark:border-gray-700 pt-6 sm:pt-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left">
               © 2024 Your Company. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              <a href="#" className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+              <a href="#" className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+              <a href="#" className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">
                 Cookie Policy
               </a>
             </div>

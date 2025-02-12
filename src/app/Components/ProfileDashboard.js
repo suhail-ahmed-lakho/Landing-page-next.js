@@ -141,7 +141,7 @@ export default function ProfileDashboard({ onClose }) {
         initial={{ scale: 0.95 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0.95 }}
-        className="bg-white rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+        className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
       >
         <button
           onClick={onClose}
@@ -152,9 +152,9 @@ export default function ProfileDashboard({ onClose }) {
           </svg>
         </button>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
           {/* Sidebar */}
-          <div className="md:w-64 flex-shrink-0">
+          <div className="md:w-64 w-full flex-shrink-0">
             <div className="text-center mb-6">
               <div className="relative w-32 h-32 mx-auto mb-4">
                 <div className="w-32 h-32 rounded-full overflow-hidden">
@@ -229,9 +229,10 @@ export default function ProfileDashboard({ onClose }) {
                       type="text"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 ${
-                        errors.fullName ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 
+                        dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                          errors.fullName ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     {errors.fullName && (
                       <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
@@ -246,9 +247,10 @@ export default function ProfileDashboard({ onClose }) {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 
+                        dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                          errors.email ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -263,7 +265,8 @@ export default function ProfileDashboard({ onClose }) {
                       value={formData.bio}
                       onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 border-gray-300"
+                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 
+                        dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
                       placeholder="Tell us about yourself..."
                     />
                   </div>
@@ -280,9 +283,10 @@ export default function ProfileDashboard({ onClose }) {
                       type="password"
                       value={formData.currentPassword}
                       onChange={(e) => setFormData({ ...formData, currentPassword: e.target.value })}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 ${
-                        errors.currentPassword ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 
+                        dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                          errors.currentPassword ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     {errors.currentPassword && (
                       <p className="text-red-500 text-sm mt-1">{errors.currentPassword}</p>
@@ -297,9 +301,10 @@ export default function ProfileDashboard({ onClose }) {
                       type="password"
                       value={formData.newPassword}
                       onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 ${
-                        errors.newPassword ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 
+                        dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                          errors.newPassword ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     {errors.newPassword && (
                       <p className="text-red-500 text-sm mt-1">{errors.newPassword}</p>
@@ -314,9 +319,10 @@ export default function ProfileDashboard({ onClose }) {
                       type="password"
                       value={formData.confirmPassword}
                       onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 ${
-                        errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 
+                        dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 ${
+                          errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     {errors.confirmPassword && (
                       <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>

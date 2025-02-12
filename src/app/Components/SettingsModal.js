@@ -88,7 +88,7 @@ export default function SettingsModal({ onClose }) {
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-4 sm:p-6"
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
@@ -105,7 +105,7 @@ export default function SettingsModal({ onClose }) {
           </div>
 
           <div className="space-y-6">
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap sm:flex-nowrap space-x-0 sm:space-x-4 space-y-2 sm:space-y-0">
               {['appearance', 'language'].map((tab) => (
                 <button
                   key={tab}
@@ -122,74 +122,72 @@ export default function SettingsModal({ onClose }) {
             </div>
 
             {activeTab === 'appearance' && (
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Appearance Settings</h3>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Theme
-                    </label>
-                    <select
-                      value={settings.appearance.theme}
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white">Appearance Settings</h3>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Theme
+                  </label>
+                  <select
+                    value={settings.appearance.theme}
+                    onChange={(e) => setSettings({
+                      ...settings,
+                      appearance: {
+                        ...settings.appearance,
+                        theme: e.target.value
+                      }
+                    })}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                  >
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="system">System</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Font Size
+                  </label>
+                  <select
+                    value={settings.appearance.fontSize}
+                    onChange={(e) => setSettings({
+                      ...settings,
+                      appearance: {
+                        ...settings.appearance,
+                        fontSize: e.target.value
+                      }
+                    })}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                  >
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                  </select>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <label className="flex items-center space-x-3">
+                    <input
+                      type="checkbox"
+                      checked={settings.appearance.reducedMotion}
                       onChange={(e) => setSettings({
                         ...settings,
                         appearance: {
                           ...settings.appearance,
-                          theme: e.target.value
+                          reducedMotion: e.target.checked
                         }
                       })}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-                    >
-                      <option value="light">Light</option>
-                      <option value="dark">Dark</option>
-                      <option value="system">System</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Font Size
-                    </label>
-                    <select
-                      value={settings.appearance.fontSize}
-                      onChange={(e) => setSettings({
-                        ...settings,
-                        appearance: {
-                          ...settings.appearance,
-                          fontSize: e.target.value
-                        }
-                      })}
-                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-                    >
-                      <option value="small">Small</option>
-                      <option value="medium">Medium</option>
-                      <option value="large">Large</option>
-                    </select>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        checked={settings.appearance.reducedMotion}
-                        onChange={(e) => setSettings({
-                          ...settings,
-                          appearance: {
-                            ...settings.appearance,
-                            reducedMotion: e.target.checked
-                          }
-                        })}
-                        className="rounded border-gray-300 dark:border-gray-600 text-green-500 focus:ring-green-500 dark:bg-gray-700"
-                      />
-                      <span className="text-gray-700 dark:text-gray-300">Reduced Motion</span>
-                    </label>
-                  </div>
+                      className="rounded border-gray-300 dark:border-gray-600 text-green-500 focus:ring-green-500 dark:bg-gray-700"
+                    />
+                    <span className="text-gray-700 dark:text-gray-300">Reduced Motion</span>
+                  </label>
                 </div>
               </div>
             )}
 
             {activeTab === 'language' && (
-              <div className="space-y-4">
+              <div className="space-y-4 sm:space-y-6">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">Language Settings</h3>
                 <div>
                   <select
